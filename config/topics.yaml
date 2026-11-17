@@ -1,0 +1,58 @@
+# Topics and the keywords that trigger them (matched on title + abstract, case-insensitive).
+# priority: primary topics rank higher than secondary ones.
+# Keywords ending in * match any continuation (e.g. "entrepreneur*" -> entrepreneurs, entrepreneurial).
+# Keywords starting with ~ are 'weak': they count in economics/management outlets but are ignored in
+# strictly-filtered outlets (Nature, PNAS, psychology, statistics, arXiv), where they are too generic.
+
+topics:
+  - id: theory
+    label: Game & Economic Theory
+    priority: primary
+    keywords: [game theory, game-theoretic, "~equilibri*", nash, bayesian persuasion, information design, signaling, signalling,
+               cheap talk, mechanism design, "incentive compatib*", "auction*", matching market, stable matching, contract theory,
+               principal-agent, moral hazard, adverse selection, "~screening", "repeated game*", "~reputation", "~learning", misspecifi*,
+               "misspecified model*", bounded rationality, rational inattention, "decision theory", ambiguity, "ambiguity aversion",
+               "expected utility", "social choice", "~voting", bargaining, "information acquisition", "~disclosure", "common prior",
+               "higher-order belief*", "robust mechanism", "dynamic game*", "stochastic game*", "~evolutionary", "~experimentation",
+               "bandit*", "~delegation", "~commitment", "verifiable information", "general equilibrium", "market design"]
+
+  - id: innovation
+    label: Innovation & Entrepreneurship
+    priority: primary
+    keywords: ["~innovat*", "entrepreneur*", "startup*", start-up*, "venture capital", "R&D", "research and development",
+               "patent*", "intellectual property", "~invention*", "inventor*", "technological change", "knowledge spillover*",
+               "~scientist*", "science policy", "new firm*", "firm entry", "creative destruction", "~diffusion of technolog*",
+               "~founder*", "~accelerator*", "crowdfunding", "~open source", "~technology adoption"]
+
+  - id: io
+    label: Industrial Organization & AI
+    priority: primary
+    keywords: ["industrial organization", "market power", "~competition", "antitrust", "merger*", "collusion", "~pricing",
+               "price discrimination", "~platform*", "two-sided", "oligopol*", "monopol*", "~market structure", "vertical integration",
+               "artificial intelligence", "\\bAI\\b", "generative AI", "large language model*", "LLM*", "~machine learning",
+               "~algorithm*", "~automation", "recommender", "data market*", "digital market*", "~productivity", "markup*", "~entry"]
+
+  - id: history
+    label: History
+    priority: secondary
+    keywords: ["~histor*", "industrial revolution", "nineteenth century", "19th century", "18th century", "~colonial", "~long run", "~persistence"]
+
+  - id: decision
+    label: Decision Theory & Behavior
+    priority: secondary
+    keywords: ["decision making", "decision-making", "choice under uncertainty", "risk preference*", "time preference*",
+               "probability weighting", "~heuristic*", "belief updating", "overconfidence", "prospect theory", "~rationality",
+               "~reasoning", "~judgment", "~judgement", "epistem*", "credence*", "causal inference"]
+
+  - id: tech
+    label: AI, Technology, Energy, Robotics & Computation
+    priority: secondary
+    keywords: ["artificial intelligence", "neural network*", "deep learning", "reinforcement learning", "large language model*",
+               "transformer", "robot*", "autonomous", "energy", "renewable*", "solar", "battery", "batteries", "electricity",
+               "climate", "~computation*", "algorithmic", "~complexity", "quantum comput*", "semiconductor*", "~optimization"]
+
+  - id: science
+    label: Physics & Biology
+    priority: secondary
+    keywords: ["physics", "quantum", "particle*", "cosmolog*", "evolution*", "genom*", "gene*", "protein*", "cell*",
+               "neuron*", "brain", "ecolog*", "biolog*"]

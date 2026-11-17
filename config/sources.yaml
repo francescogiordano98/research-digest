@@ -1,0 +1,90 @@
+# Sources scanned every week.
+# Each journal is looked up on Crossref by ISSN (print and/or electronic).
+# - rss: optional publisher feed, used in addition to Crossref (some publishers deposit to Crossref late)
+# - group: shown as a filter in the app
+# - tier: ranking band. Papers are ordered by tier first, then by topic fit within the tier.
+#     1 = top economics (top 5 + top theory/field: TE, JET, RAND, AEJs, JEEA, REStat, AER: Insights) and top management (MS, SMJ, OrgSci, ASQ, AMJ)
+#     2 = field-specific venues (SEJ, JBV, ETP, Research Policy, GEB, JIE, economic history, ...)
+#     3 = everything else (philosophy/psychology, statistics/OR, general science, preprints)
+# - default_topics: topics assigned to EVERY paper in the journal (use for pure-theory journals)
+# - strict: if true, a paper is kept only if it matches a topic keyword (needed for huge outlets like Nature/PNAS)
+
+journals:
+  # ---------------- Top 5 ----------------
+  - {name: American Economic Review, short: AER, issn: [0002-8282, 1944-7981], group: Top 5, tier: 1}
+  - {name: Econometrica, short: ECMA, issn: [0012-9682, 1468-0262], group: Top 5, tier: 1, rss: https://onlinelibrary.wiley.com/feed/14680262/most-recent}
+  - {name: Journal of Political Economy, short: JPE, issn: [0022-3808, 1537-534X], group: Top 5, tier: 1}
+  - {name: Quarterly Journal of Economics, short: QJE, issn: [0033-5533, 1531-4650], group: Top 5, tier: 1}
+  - {name: Review of Economic Studies, short: REStud, issn: [0034-6527, 1467-937X], group: Top 5, tier: 1}
+
+  # ---------------- Theory journals ----------------
+  - {name: Theoretical Economics, short: TE, issn: [1933-6837, 1555-7561], group: Theory journals, tier: 1, default_topics: [theory], rss: https://onlinelibrary.wiley.com/feed/15557561/most-recent}
+  - {name: Journal of Economic Theory, short: JET, issn: [0022-0531, 1095-7235], group: Theory journals, tier: 1, default_topics: [theory]}
+  - {name: Games and Economic Behavior, short: GEB, issn: [0899-8256, 1090-2473], group: Theory journals, tier: 2, default_topics: [theory]}
+  - {name: Economic Theory, short: ET, issn: [0938-2259, 1432-0479], group: Theory journals, tier: 2, default_topics: [theory]}
+  - {name: Journal of Mathematical Economics, short: JME, issn: [0304-4068, 1873-1538], group: Theory journals, tier: 2, default_topics: [theory]}
+
+  # ---------------- General-interest (JEEA, EJ, REStat, IER, AER: Insights) and field journals ----------------
+  - {name: AER Insights, short: AERI, issn: [2640-205X, 2640-2068], group: General-interest journals, tier: 1}
+  - {name: "AEJ: Microeconomics", short: AEJMicro, issn: [1945-7669, 1945-7685], group: Field journals, tier: 1}
+  - {name: "AEJ: Applied Economics", short: AEJApp, issn: [1945-7782, 1945-7790], group: Field journals, tier: 1}
+  - {name: RAND Journal of Economics, short: RAND, issn: [0741-6261, 1756-2171], group: Field journals, tier: 1, default_topics: [io], rss: https://onlinelibrary.wiley.com/feed/17562171/most-recent}
+  - {name: Journal of Industrial Economics, short: JIndE, issn: [0022-1821, 1467-6451], group: Field journals, tier: 2, default_topics: [io], rss: https://onlinelibrary.wiley.com/feed/14676451/most-recent}
+  - {name: Journal of the European Economic Association, short: JEEA, issn: [1542-4766, 1542-4774], group: General-interest journals, tier: 1}
+  - {name: Review of Economics and Statistics, short: REStat, issn: [0034-6535, 1530-9142], group: General-interest journals, tier: 1}
+  - {name: Economic Journal, short: EJ, issn: [0013-0133, 1468-0297], group: General-interest journals, tier: 2}
+  - {name: International Economic Review, short: IER, issn: [0020-6598, 1468-2354], group: General-interest journals, tier: 2, rss: https://onlinelibrary.wiley.com/feed/14682354/most-recent}
+  - {name: Journal of Economic History, short: JEH, issn: [0022-0507, 1471-6372], group: Field journals, tier: 2, default_topics: [history]}
+  - {name: Explorations in Economic History, short: EEH, issn: [0014-4983, 1090-2457], group: Field journals, tier: 2, default_topics: [history]}
+
+  # ---------------- Management & strategy ----------------
+  - {name: Management Science, short: MS, issn: [0025-1909, 1526-5501], group: Management & Strategy, tier: 1}
+  - {name: Strategic Management Journal, short: SMJ, issn: [0143-2095, 1097-0266], group: Management & Strategy, tier: 1, rss: https://onlinelibrary.wiley.com/feed/10970266/most-recent}
+  - {name: Organization Science, short: OrgSci, issn: [1047-7039, 1526-5455], group: Management & Strategy, tier: 1}
+  - {name: Strategy Science, short: StratSci, issn: [2333-2050, 2333-2077], group: Management & Strategy, tier: 2}
+  - {name: Administrative Science Quarterly, short: ASQ, issn: [0001-8392, 1930-3815], group: Management & Strategy, tier: 1}
+  - {name: Academy of Management Journal, short: AMJ, issn: [0001-4273, 1948-0989], group: Management & Strategy, tier: 1}
+  - {name: Research Policy, short: RP, issn: [0048-7333, 1873-7625], group: Management & Strategy, tier: 2, default_topics: [innovation]}
+  - {name: Journal of Business Venturing, short: JBV, issn: [0883-9026, 1873-2003], group: Management & Strategy, tier: 2, default_topics: [innovation]}
+  - {name: Strategic Entrepreneurship Journal, short: SEJ, issn: [1932-4391, 1932-443X], group: Management & Strategy, tier: 2, default_topics: [innovation], rss: https://onlinelibrary.wiley.com/feed/1932443X/most-recent}
+  - {name: Entrepreneurship Theory and Practice, short: ETP, issn: [1042-2587, 1540-6520], group: Management & Strategy, tier: 2, default_topics: [innovation]}
+
+  # ---------------- Philosophy & psychology ----------------
+  - {name: Philosophical Review, short: PhilRev, issn: [0031-8108, 1558-1470], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Noûs, short: Nous, issn: [0029-4624, 1468-0068], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Mind, short: Mind, issn: [0026-4423, 1460-2113], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Philosophy of Science, short: PhilSci, issn: [0031-8248, 1539-767X], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Economics and Philosophy, short: EconPhil, issn: [0266-2671, 1474-0028], group: Philosophy & Psychology, tier: 2, default_topics: [decision]}
+  - {name: Psychological Review, short: PsychRev, issn: [0033-295X, 1939-1471], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Psychological Science, short: PsychSci, issn: [0956-7976, 1467-9280], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Cognition, short: Cognition, issn: [0010-0277, 1873-7838], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Nature Human Behaviour, short: NHB, issn: [2397-3374], group: Philosophy & Psychology, tier: 3, strict: true}
+  - {name: Journal of Risk and Uncertainty, short: JRU, issn: [0895-5646, 1573-0476], group: Philosophy & Psychology, tier: 2, default_topics: [decision]}
+
+  # ---------------- Statistics & applied math / OR ----------------
+  - {name: Annals of Statistics, short: AoS, issn: [0090-5364, 2168-8966], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: Journal of the American Statistical Association, short: JASA, issn: [0162-1459, 1537-274X], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: "Journal of the Royal Statistical Society B", short: JRSSB, issn: [1369-7412, 1467-9868], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: Biometrika, short: Biometrika, issn: [0006-3444, 1464-3510], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: Mathematics of Operations Research, short: MOR, issn: [0364-765X, 1526-5471], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: Operations Research, short: OR, issn: [0030-364X, 1526-5463], group: Statistics & Applied Math, tier: 3, strict: true}
+  - {name: Journal of Machine Learning Research, short: JMLR, issn: [1532-4435, 1533-7928], group: Statistics & Applied Math, tier: 3, strict: true}
+
+  # ---------------- General science (strictly filtered) ----------------
+  - {name: Nature, short: Nature, issn: [0028-0836, 1476-4687], group: General Science, tier: 3, strict: true}
+  - {name: Science, short: Science, issn: [0036-8075, 1095-9203], group: General Science, tier: 3, strict: true}
+  - {name: PNAS, short: PNAS, issn: [0027-8424, 1091-6490], group: General Science, tier: 3, strict: true}
+  - {name: Nature Machine Intelligence, short: NMI, issn: [2522-5839], group: General Science, tier: 3, strict: true}
+  - {name: Nature Energy, short: NEnergy, issn: [2058-7546], group: General Science, tier: 3, strict: true}
+  - {name: Science Robotics, short: SciRob, issn: [2470-9476], group: General Science, tier: 3, strict: true}
+  - {name: Nature Physics, short: NPhys, issn: [1745-2473, 1745-2481], group: General Science, tier: 3, strict: true}
+
+# Working-paper feeds (RSS). Kept only if they match a topic.
+working_papers:
+  - {name: NBER Working Papers, short: NBER, rss: "https://www.nber.org/rss/new.xml", group: Preprints, nber: true}
+
+# Preprint feeds (arXiv). Papers here are kept only if they match a topic.
+arxiv:
+  - {category: econ.TH, name: "arXiv: Economic Theory", group: Preprints}
+  - {category: cs.GT, name: "arXiv: CS & Game Theory", group: Preprints}
+  - {category: econ.GN, name: "arXiv: General Economics", group: Preprints}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research Digest</title>
+<meta name="description" content="A weekly digest of new research in economic theory, innovation, industrial organization and AI.">
+<meta name="theme-color" content="#7a2e1d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Digest">
+<link rel="alternate" type="application/rss+xml" title="Research Digest" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead-row">
+    <div>
+      <div class="kicker" id="kicker">Weekly Research Digest</div>
+      <h1 class="title">Research Digest</h1>
+    </div>
+    <nav class="nav">
+      <select id="issueSelect" aria-label="Choose issue"></select>
+      <button class="btn ghost" id="savedBtn" aria-pressed="false" title="Saved papers">★ <span id="savedCount">0</span></button>
+      <button class="btn ghost" id="aboutBtn">About</button>
+      <button class="btn" id="installBtn" hidden>Install app</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="brief card" id="briefCard">
+    <div class="meta" id="issueMeta">Loading…</div>
+    <div class="brief-body" id="brief"></div>
+  </section>
+
+  <section class="toolbar" aria-label="Search and filters">
+    <div class="search">
+      <input id="q" type="search" placeholder='Search — e.g. persuasion AND (learning OR "misspecified") NOT experiment' autocomplete="off">
+    </div>
+    <div class="chiprow"><span class="rowlabel">Topics</span><div class="chips" id="topicChips" aria-label="Topics — what the paper is about"></div></div>
+    <div class="chiprow"><span class="rowlabel">Outlets</span><div class="chips" id="groupChips" aria-label="Outlets — where it was published"></div></div>
+    <div class="row">
+      <label class="toggle"><input type="checkbox" id="picksOnly"> Top picks only</label>
+      <label class="sortlbl">Sort
+        <select id="sort">
+          <option value="rank">Relevance</option>
+          <option value="journal">Outlet</option>
+          <option value="date">Date</option>
+        </select>
+      </label>
+      <span class="count" id="count"></span>
+    </div>
+  </section>
+
+  <section id="list" class="list" aria-live="polite"></section>
+</main>
+
+<footer class="wrap footer">
+  <a href="feed.xml">RSS</a> · Updated every Monday · Summaries may be AI‑generated; check the paper.
+</footer>
+
+<dialog id="about">
+  <h2>About</h2>
+  <p>Two kinds of filter: <strong>Topics</strong> say what a paper is about (from its title and abstract, any outlet);
+  <strong>Outlets</strong> say where it was published.</p>
+  <p>Every week this digest scans new articles in the top‑5 economics journals, theory journals (TE, JET, GEB…),
+  general-interest journals (JEEA, EJ, REStat, IER, AER: Insights), field journals (RAND, JIE, AEJs, economic history), management &amp; strategy journals, philosophy &amp; psychology, statistics &amp; applied math, broad science
+  outlets, and arXiv (econ.TH, cs.GT, econ.GN).</p>
+  <p>Papers are tagged and ranked for: <strong>game &amp; economic theory</strong>, <strong>innovation &amp; entrepreneurship</strong>,
+  <strong>industrial organization &amp; AI</strong>; and, secondarily, history, decision theory, technology/energy/robotics, and physics &amp; biology.</p>
+  <p><strong>Search syntax:</strong> <code>AND</code>, <code>OR</code>, <code>NOT</code>, parentheses and <code>"quoted phrases"</code>.
+  Adjacent words imply AND. Prefix a word with <code>author:</code>, <code>title:</code> or <code>journal:</code> to search one field.</p>
+  <p><strong>Install on your phone:</strong> open this page in Safari (iPhone) → Share → <em>Add to Home Screen</em>; or in Chrome (Android) → ⋮ → <em>Install app</em>.</p>
+  <button class="btn" onclick="this.closest('dialog').close()">Close</button>
+</dialog>
+
+<script src="app.js?v=3" defer></script>
+</body>
+</html>
