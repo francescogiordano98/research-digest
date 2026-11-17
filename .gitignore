@@ -3,3 +3,5 @@ __pycache__/
 .env
 config/subscribers.txt
 last_email.html
+
+# local test builds (the online workflow commits its own)
